@@ -1,11 +1,13 @@
-import React from 'react'
+import React from "react";
+import PageList from "../components/PageList";
+import gql from 'graphql-tag';
 
-function Home() {
-    return (
-        <div>
-            Home
-        </div>
-    )
+const Home=()=> {
+  return (
+    <div>
+      <PageList />
+    </div>
+  );
 }
 
-export default Home
+export default Home;

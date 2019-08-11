@@ -4,11 +4,12 @@ import { Link } from "react-router-dom";
 // import Login from "../pages/Login";
 // import Register from "../pages/Register";
 
+const Navbar=()=> {
+  const pathname = window.location.pathname;
 
-const { SubMenu } = Menu;
+  const path = pathname === "/" ? "home" : pathname.substr(1);
 
-function Navbar() {
-  const [current, setCurrent] = useState("mail");
+  const [current, setCurrent] = useState(path);
 
   const handleClick = ({ key }) => {
     console.log("click ", key);
@@ -16,21 +17,20 @@ function Navbar() {
   };
 
   return (
-    <Menu onClick={handleClick} selectedKeys={[current]} mode="horizontal" theme='dark'>
-
-
-      <Menu.Item key="Home">
-      <Link to ="/">
-      <Icon type="home" />
-      Home
-      </Link>
+    <Menu onClick={handleClick} selectedKeys={[current]} mode="horizontal">
+      <Menu.Item key="home">
+        <Link to="/">
+          <Icon type="home" />
+          Home
+        </Link>
       </Menu.Item>
 
-      <Menu.Item key="app">
-      <Link to ="/login">
-        <Icon type="appstore" />
-        Navigation Two
-      </Link>
+      <Menu.Item key="login">
+        <Link to="/login">Login</Link>
+      </Menu.Item>
+
+      <Menu.Item key="register">
+        <Link to="/register">Register</Link>
       </Menu.Item>
     </Menu>
   );
