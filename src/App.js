@@ -4,7 +4,6 @@ import Home from "./pages/Home";
 import Login from "./pages/Login";
 import Register from "./pages/Register";
 import "antd/dist/antd.css";
-import "./App.css";
 import Navbar from "./components/navbar";
 
 function App() {
